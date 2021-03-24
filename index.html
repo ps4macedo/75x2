@@ -1,0 +1,367 @@
+<html manifest="cache.manifest">
+<style>
+.button:focus, .button::-moz-focus-inner{
+  outline:none;
+  border:none;
+}
+.button{
+  font-family: arial;
+  font-size:16px;
+  text-transform: uppercase;
+  font-weight:700;
+  border:2px solid #404040;
+  border-radius: 4px;
+  padding:10px;
+  cursor: pointer;
+  display:inline-block;
+  text-decoration: none;
+  background:transparent;
+  color:#d4d7d8;
+  box-shadow:0 5px 0 #878787;
+}
+.button:hover{
+  font-size:22px;
+  background:#242424;
+  border:2px solid #ffffff;
+  box-shadow:0 5px 0 #cccccc;
+  color:white;
+}
+.button:active{
+  background:#ee596f;
+  position:relative;
+  color:black;
+  top:5px;
+  box-shadow:none;
+}
+input{
+  width:25px;
+  height:25px;
+  background-color: transparent;
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+ .content {
+  width:80%;
+  height:15%;
+  margin-left:7.5%;
+  background:rgba(0,0,0,0.5);
+  color:white;
+  margin-top:1%;
+  font-size:25px;
+  text-align:center;
+  border-radius:30px;
+  padding:20px;
+  line-height:12px;
+ }
+ .title {
+  font-size:40px;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-weight:bolder;
+  margin-bottom:10px;
+ }
+ .yellow {
+  color:yellow;
+ }
+ .hue {
+  color:yellow;
+  padding:10px;
+  border-radius:10px;
+  animation:hue 5s linear infinite;
+  -webkit-animation: hue 5s linear infinite;
+  box-shadow: 0px 0px 50px yellow;
+  color:white;
+  background:rgba(255,255,0,0.4);
+ }
+ .hue:hover{
+  color:yellow;
+  background:transparent;
+ }
+ @keyframes hue{
+ 0%{
+ filter:hue-rotate(0deg);
+ -webkit-filter:hue-rotate(0deg);
+ }
+ 10%{
+ box-shadow: 0px 1px 50px yellow;
+ }
+ 20%{
+ box-shadow: 1px 1px 50px yellow;
+ }
+ 30%{
+ box-shadow: 1px 0px 50px yellow;
+ }
+ 40%{
+  box-shadow: 1px -1px 50px yellow;
+ }
+ 50%{
+ box-shadow: 0px -1px 50px yellow;
+ }
+ 60%{
+ box-shadow: -1px -1px 50px yellow;
+ }
+ 70%{
+ box-shadow: -1px 0px 50px yellow;
+ }
+ 80%{
+ box-shadow: -1px 1px 50px yellow;
+ }
+ 90%{
+ box-shadow: 0px 1px 50px yellow;
+ }
+ 100%{
+ filter:hue-rotate(360deg);
+ -webkit-filter:hue-rotate(360deg);
+ }
+ }
+ .text {
+  padding-bottom:50px;
+ }
+  .back {
+   font-size:25px;
+   margin-top:10px;
+   display:block;
+   line-height:55px;
+   width:20%;
+   text-decoration:none;
+   height:50px;
+   background:white;
+   color:black;
+   border-radius:15px;
+  }
+  .back:hover{
+   border:2px solid white;
+   background:transparent;
+   box-sizing:border-box;
+   color:white;
+  }
+/* Modal Content */
+.modal-content {
+  font-family: BFARNAZ;
+  font-size: 18px;
+  position: relative;
+  background-color: #dddddd;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+		.titlehead {
+		  background-color: transparent;  
+		  border-radius: 5px;
+		  color: #6089f6;
+		  padding: .5em;
+		  text-decoration: none;
+		  text-align: center;
+		  margin-top: -10px;
+		  margin-bottom: -10px;
+		  font-family: system-ui;
+		}
+
+
+		.bg {
+			background-color:white;
+			background-image:url(bg1.png);
+			background-attachment: fixed;
+			background-size:100%;
+			background-repeat:no-repeat;
+			font-family: system-ui;
+			text-align:center;
+		}
+
+		#myProgress {
+		  border: 1px solid #ff5757;
+		  border-radius: 3px;
+		  background-color: transparent;
+		  height: 45px;
+		  position: absolute;
+		  top:0;
+		  bottom: 250;
+		  left: 150;
+		  right: 150;
+		  margin: auto;
+		}
+       #Progress {
+		  color: #6089f6;
+		}
+
+		#myBar {
+		  width: 0%;
+		  height: 40px;
+		  background-color: #2b417a;
+		  text-align: center;
+		  line-height: 30px;
+		  color: #ff5757;
+		  font-size: 35px;
+		  padding-top: 5px;
+		}
+.pointer {cursor: pointer;}
+</style>
+<head>
+	<title>PS4MACEDO 7.5x</title>
+</head>
+	<body onload="go()" class="bg">
+		<script>
+			if(localStorage.jb==null){localStorage.jb='jb.js'}
+			var fw = (navigator.userAgent.substring(navigator.userAgent.indexOf('5.0 (') + 19, navigator.userAgent.indexOf(') Apple'))).replace('.', '');;
+			if(window.applicationCache.status==2){localStorage.is75XV2Cached=true;}
+			window.applicationCache.ondownloading=function(){document.getElementById("progress").innerHTML="Instalando Cache Offline... <font color=\"#ee596f\"> Aguarde!!!</font>";localStorage.is75XV2Cached=false;};
+			window.applicationCache.onprogress=function(a){document.getElementById("myBar").style.width=(Math.round(100*(a.loaded/a.total)))+"%";document.getElementById("myBar").innerHTML=(Math.round(100*(a.loaded/a.total)))+"%";};
+			window.applicationCache.oncached=function(){document.getElementById("progress").innerHTML="Cache <font color=\"#ee596f\">instalada</font> com sucesso!!!";localStorage.is75XV2Cached=true;setTimeout(function(){document.getElementById("progress").innerHTML="Agora saia usando o CIRCULO, <font color=\"#ee596f\">desabilite a REDE</font> e RETORNE ao navegador."; }, 2600);};
+		</script>
+		<script>
+			var width = 0;
+			function frame1() {
+				var elem = document.getElementById("myBar");
+				var i=0;
+				var id = setInterval(fra, 10);
+				function fra(){
+				  if(i<10 && width<100){
+					  width++;
+					  elem.style.width = width + "%";
+					  elem.innerHTML = width  + "%";
+				  } i++;
+				}
+			}
+		</script>
+		<script>
+		function print(){}
+
+		var scriptCode = '';
+
+		function preloadScripts(lst)
+		{	
+			scriptCode = '';
+			for(var i = 0; i < lst.length; i++)
+			{
+				var xhr = new XMLHttpRequest();
+				xhr.open('GET', lst[i], false);
+				xhr.send('');
+				scriptCode += xhr.responseText + '\n';
+			}
+		}
+		
+		function done(){
+			document.getElementById("myProgress").remove();
+			if(document.getElementById("progress").innerHTML.includes("Failed")){
+				document.getElementById('load').innerHTML='<tr>'+
+				    '<td><h1 style=\'font-size:27px;text-align:center;\'><u><font color="#49c179">PS4MACEDO 7.5x v1</font></u></h1></td></tr>'+
+					'<tr>'+
+					'<td align="center"><font size="3">'+
+					'<font color="white">Ative a </font><font color="#ee596f"><b>Nova Versão do Preload</b></font> <font color="#ee596f" size="5"><b>aqui</b></font><input type="checkbox" id="tog" onclick="if(document.getElementById(\'tog\').checked){localStorage.jb=\'jb.js\'; progress.innerHTML=\'Nova versão do preload ativada.\'}else{localStorage.jb=\'oldjb.js\'; progress.innerHTML=\'Versão anterior do preload ativada.\'}"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'"; /></font></td>'+
+					'</tr>';
+			}else{
+				document.getElementById('load').innerHTML='<tr>'+
+				    '<td><h1 style=\'font-size:27px;text-align:center;\'><u><font color="#49c179">PS4MACEDO 7.5x v1</font></u></h1></td></tr>'+
+					'<tr>'+
+					'<td align="center"><font size="3">'+
+					'<font color="white">Ative a </font><font color="#ee596f"><b>Nova Versão do Preload</b></font> <font color="#ee596f" size="5"><b>aqui</b></font><input type="checkbox" id="tog" onclick="if(document.getElementById(\'tog\').checked){localStorage.jb=\'jb.js\'; progress.innerHTML=\'Nova versão do preload ativada.\'}else{localStorage.jb=\'oldjb.js\'; progress.innerHTML=\'Versão anterior do preload ativada.\'}"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'"; /></font></td>'+
+					'</tr>'+
+					'<tr>'+
+					'<td align="center" colspan="6">'+
+					'<a href="#" id="goldhen" class="button" onMouseOver="progress.innerHTML=\'Ativa GoldHEN v1.0 + FTP\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'goldhen\'); return false" style="">GoldHEN</a>&nbsp;'+
+					'<a href="#" id="mira75X" class="button" onMouseOver="progress.innerHTML=\'Ativa Mira (AlAzif)\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'mira75X\'); return false" style="">MIRA</a>&nbsp;'+
+					'<a href="#" id="mira2b" class="button" onMouseOver="progress.innerHTML=\'Ativa Mira (Karo) + Spoof FW 9.99\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'mira2b\'); return false" style="">MIRA+</a>&nbsp;'+
+					'</td>'+
+					'</tr>'+
+					'<tr><td><br/></td></tr>'+
+					'<tr>'+
+				    '<td><h1 style=\'font-size:27px;text-align:center;\'><u><font color="#49c179">CARGAS ÚTEIS</font></u></h1></td>'+
+					'</tr>'+
+					'<tr>'+
+					'<td align="center"  colspan="6">'+
+					'<a href="#" id="app2usb" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'app2usb\'); return false" style="">App2USB</a>&nbsp;'+
+					'<a href="#" id="binloader" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'binloader\'); return false" style="">Bin Loader</a>&nbsp;'+
+					'<a href="#" id="ps4debug" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'ps4debug\'); return false" style="">PS4Debug</a>&nbsp;'+
+					'<a href="#" id="disableupdates" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'disableupdates\'); return false" style="">Disable Upd</a>&nbsp;'+
+					'<a href="#" id="enableupdates" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'enableupdates\'); return false" style="">Enable Upd</a>&nbsp;'+
+					'<a href="#" id="ftp" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'ftp\'); return false" style="">FTP</a>&nbsp;'+
+					'</td>'+
+					'</tr>'+
+					'<tr><td><br/></td></tr>'+
+					'<tr>'+
+					'<td align="center" colspan="6">'+
+					'<a href="#" id="dumper" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'dumper\'); return false" style="">Dumper</a>&nbsp;'+
+					'<a href="#" id="exitidu" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'exitidu\'); return false" style="">Exit IDU</a>&nbsp;'+
+					'<a href="#" id="enablebrowser" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'enablebrowser\'); return false" style="">Enable Browser</a>&nbsp;'+
+					'<a href="#" id="backup" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'backup\'); return false" style="">Backup</a>&nbsp;'+
+					'<a href="#" id="restore" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'restore\'); return false" style="">Restore</a>&nbsp;'+
+					'<a href="#" id="historyblocker" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'historyblocker\'); return false" style="">History Blocker</a>&nbsp;'+
+					'</td>'+
+					'</tr>'+
+					'<tr><td><br/></td></tr>'+
+					'<tr>'+
+					'<td align="center" colspan="6">'+
+					'<a href="#" id="renamer" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'rifrenamer\'); return false" style="">Rif Renamer</a>&nbsp;'+
+					'<a href="#" id="todex" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'todex\'); return false" style="">To-Dex</a>&nbsp;'+
+					'<a href="#" id="disableaslr" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'disableaslr\'); return false" style="">Disable ASLR</a>&nbsp;'+
+					'<a href="#" id="kerneldumper" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'kerneldumper\'); return false" style="">Kernel Dumper</a>&nbsp;'+
+					'<a href="#" id="webrte" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'webrte\'); return false" style="">WebRTE</a>&nbsp;'+
+					'<a href="#" id="fancontrol" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'fancontrol\'); return false" style="">Fan Control</a>&nbsp;'+
+					'</td>'+
+					'</tr>';
+			}
+			if(localStorage.jb=='jb.js'){document.getElementById('tog').checked=true;document.getElementById('oexp').style.color='gray';document.getElementById('nexp').style.color='white';}else{document.getElementById('tog').checked=false;document.getElementById('oexp').style.color='white';document.getElementById('nexp').style.color='gray';}
+		}
+		
+		window.midExploit = function()
+		{
+			preloadScripts(['exploit.js', localStorage.jb]);
+		}
+
+		window.postExploit = function()
+		{
+			setTimeout(function()
+			{	
+				eval.call(window, scriptCode);
+				done();
+			}, 100);
+
+		};
+		
+		window.postPayload = function()
+		{
+			setTimeout(function()
+			{	
+				eval.call(window, scriptCode);
+				//done();
+			}, 100);
+
+		};
+
+		</script>
+		<script src="utils.js"></script>
+		<script src="int64.js"></script>
+		<script src="ps4.js"></script>
+		<h1 id="progress" class="titlehead">Carregando... Por favor, <font color="#ee596f">espere!!!</font></h1>
+		<hr width="50%" size="1" color="#ff5757">
+		<button style="opacity:0" id="input1" onfocus="handle2()"></button>
+		<button style="opacity:0" id="input2"></button>
+		<button style="opacity:0" id="input3" onfocus="handle2()"></button>
+		<select style="opacity:0" id="select1">
+			<option value="value1">Value1</option>
+		</select>
+		<h1 id="myProgress">
+		  <div id="myBar">0%</div>
+		</h1>
+		<table id="load" align="center" style="width:800px;margin-top:30px;">
+		</table>
+	</body>
+</html>
