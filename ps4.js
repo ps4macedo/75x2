@@ -216,17 +216,6 @@ function payload_finished(payload)
 	}
 }
 
-function temperatura(){
-	for(var i=35; i<=80; i++){
-		var select = document.getElementById("tempC");
-		var option = document.createElement("OPTION");
-		select.options.add(option);
-		option.text = i;
-		option.value = i;
-	}
-	tempC.value=70;
-}
-
 function read(addr, length) {
 	for (let i = 0; i < 8; i++)
 		g_relative_rw[g_ab_index + OFFSET_JSAB_VIEW_VECTOR + i] = addr.byteAt(i);

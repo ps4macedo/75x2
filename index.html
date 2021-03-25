@@ -261,19 +261,21 @@ input{
 		function done(){
 			document.getElementById("myProgress").remove();
 			if(document.getElementById("progress").innerHTML.includes("Failed")){
-				document.getElementById('load').innerHTML=''+
-					'<tr id="toggleExploit" style="color:white;">'+
-					'<td id="oexp" align="right" style="color:#585858; width: 45%;font-family: system-ui;font-size: 20px;">Preload Old Exploit &nbsp;</td>'+
-					'<td style="width: 10%;"><label class="switch"><input checked id="tog" onclick="if(document.getElementById(\'tog\').checked){document.getElementById(\'oexp\').style.color=\'#585858\';document.getElementById(\'nexp\').style.color=\'white\';localStorage.jb=\'jb.js\';}else{document.getElementById(\'nexp\').style.color=\'#585858\';document.getElementById(\'oexp\').style.color=\'white\';localStorage.jb=\'oldjb.js\';}" type="checkbox"><span class="slider round"></span></label></td>'+
-					'<td id="nexp" align="left" style="width: 45%;font-family: system-ui;font-size: 20px;">&nbsp; Preload New Exploit</td>'+
+				document.getElementById('load').innerHTML='<tr>'+
+				    '<td><h1 style=\'font-size:27px;text-align:center;\'><u><font color="#49c179">EXPLOIT 7.5x</font></u></h1></td></tr>'+
+					'<tr>'+
+					'<td align="center" colspan="6">'+
+					'<a href="#" id="exploit_old" class="button" onMouseOver="progress.innerHTML=\'Exploit (sleirsgoevy) necessário para ativação das cargas úteis.\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v2\'" onclick="toggle_payload(\'exploit_old\'); return false" style=""><font color="#ee596f">VERSÃO 1</font></a>&nbsp;'+
+					'<a href="#" id="exploit" class="button" onMouseOver="progress.innerHTML=\'Exploit (sleirsgoevy) necessário para ativação das cargas úteis.\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v2\'" onclick="toggle_payload(\'exploit\'); return false" style=""><font color="#ee596f">VERSÃO 2</font></a>&nbsp;'+
+					'</td>'+
 					'</tr>';
 			}else{
 				document.getElementById('load').innerHTML='<tr>'+
 				    '<td><h1 style=\'font-size:27px;text-align:center;\'><u><font color="#49c179">EXPLOIT 7.5x</font></u></h1></td></tr>'+
 					'<tr>'+
 					'<td align="center" colspan="6">'+
-					'<a href="#" id="exploit_old" class="button" onMouseOver="progress.innerHTML=\'Exploit (sleirsgoevy) necessário para ativação das cargas úteis.\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'exploit_old\'); return false" style=""><font color="#ee596f">VERSÃO 1</font></a>&nbsp;'+
-					'<a href="#" id="exploit" class="button" onMouseOver="progress.innerHTML=\'Exploit (sleirsgoevy) necessário para ativação das cargas úteis.\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'exploit\'); return false" style=""><font color="#ee596f">VERSÃO 2</font></a>&nbsp;'+
+					'<a href="#" id="exploit_old" class="button" onMouseOver="progress.innerHTML=\'Exploit (sleirsgoevy) necessário para ativação das cargas úteis.\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v2\'" onclick="toggle_payload(\'exploit_old\'); return false" style=""><font color="#ee596f">VERSÃO 1</font></a>&nbsp;'+
+					'<a href="#" id="exploit" class="button" onMouseOver="progress.innerHTML=\'Exploit (sleirsgoevy) necessário para ativação das cargas úteis.\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v2\'" onclick="toggle_payload(\'exploit\'); return false" style=""><font color="#ee596f">VERSÃO 2</font></a>&nbsp;'+
 					'</td>'+
 					'</tr>'+
 					'<tr><td><hr size="1" color="#6089f6"></td></tr>'+
@@ -282,47 +284,47 @@ input{
 					'</tr>'+
 					'<tr>'+
 					'<td align="center" colspan="6">'+
-					'<a href="#" id="goldhen" class="button" onMouseOver="progress.innerHTML=\'Ativa GoldHEN v1.0 + FTP\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'goldhen\'); return false" style=""><font color="#6089f6">GoldHEN</font></a>&nbsp;'+
-					'<a href="#" id="mira75X" class="button" onMouseOver="progress.innerHTML=\'Ativa Mira (AlAzif)\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'mira75X\'); return false" style=""><font color="#ee596f">MIRA</font></a>&nbsp;'+
-					'<a href="#" id="mira2b" class="button" onMouseOver="progress.innerHTML=\'Ativa Mira (Karo) + Spoof FW 9.99\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'mira2b\'); return false" style=""><font color="#ee596f">MIRA+</font></a>&nbsp;'+
+					'<a href="#" id="goldhen" class="button" onMouseOver="progress.innerHTML=\'Ativa GoldHEN v1.0 + FTP\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v2\'" onclick="toggle_payload(\'goldhen\'); return false" style=""><font color="#6089f6">GoldHEN</font></a>&nbsp;'+
+					'<a href="#" id="mira75X" class="button" onMouseOver="progress.innerHTML=\'Ativa Mira (AlAzif)\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v2\'" onclick="toggle_payload(\'mira75X\'); return false" style=""><font color="#ee596f">MIRA</font></a>&nbsp;'+
+					'<a href="#" id="mira2b" class="button" onMouseOver="progress.innerHTML=\'Ativa Mira (Karo) + Spoof FW 9.99\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v2\'" onclick="toggle_payload(\'mira2b\'); return false" style=""><font color="#ee596f">MIRA+</font></a>&nbsp;'+
 					'</td>'+
 					'</tr>'+
 					'<tr><td><br/></td></tr>'+
 					'<tr>'+
 					'<td align="center"  colspan="6">'+
-					'<a href="#" id="app2usb" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'app2usb\'); return false" style="">App2USB</a>&nbsp;'+
-					'<a href="#" id="binloader" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'binloader\'); return false" style="">Bin Loader</a>&nbsp;'+
-					'<a href="#" id="ps4debug" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'ps4debug\'); return false" style="">PS4Debug</a>&nbsp;'+
-					'<a href="#" id="disableupdates" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'disableupdates\'); return false" style="">Disable Upd</a>&nbsp;'+
-					'<a href="#" id="enableupdates" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'enableupdates\'); return false" style="">Enable Upd</a>&nbsp;'+
-					'<a href="#" id="ftp" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'ftp\'); return false" style="">FTP</a>&nbsp;'+
+					'<a href="#" id="app2usb" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v2\'" onclick="toggle_payload(\'app2usb\'); return false" style="">App2USB</a>&nbsp;'+
+					'<a href="#" id="binloader" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v2\'" onclick="toggle_payload(\'binloader\'); return false" style="">Bin Loader</a>&nbsp;'+
+					'<a href="#" id="ps4debug" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v2\'" onclick="toggle_payload(\'ps4debug\'); return false" style="">PS4Debug</a>&nbsp;'+
+					'<a href="#" id="disableupdates" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v2\'" onclick="toggle_payload(\'disableupdates\'); return false" style="">Disable Upd</a>&nbsp;'+
+					'<a href="#" id="enableupdates" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v2\'" onclick="toggle_payload(\'enableupdates\'); return false" style="">Enable Upd</a>&nbsp;'+
+					'<a href="#" id="ftp" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v2\'" onclick="toggle_payload(\'ftp\'); return false" style="">FTP</a>&nbsp;'+
 					'</td>'+
 					'</tr>'+
 					'<tr><td><br/></td></tr>'+
 					'<tr>'+
 					'<td align="center" colspan="6">'+
-					'<a href="#" id="dumper" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'dumper\'); return false" style="">Dumper</a>&nbsp;'+
-					'<a href="#" id="exitidu" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'exitidu\'); return false" style="">Exit IDU</a>&nbsp;'+
-					'<a href="#" id="enablebrowser" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'enablebrowser\'); return false" style="">Enable Browser</a>&nbsp;'+
-					'<a href="#" id="backup" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'backup\'); return false" style="">Backup</a>&nbsp;'+
-					'<a href="#" id="restore" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'restore\'); return false" style="">Restore</a>&nbsp;'+
-					'<a href="#" id="historyblocker" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'historyblocker\'); return false" style="">History Blocker</a>&nbsp;'+
+					'<a href="#" id="dumper" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v2\'" onclick="toggle_payload(\'dumper\'); return false" style="">Dumper</a>&nbsp;'+
+					'<a href="#" id="exitidu" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v2\'" onclick="toggle_payload(\'exitidu\'); return false" style="">Exit IDU</a>&nbsp;'+
+					'<a href="#" id="enablebrowser" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v2\'" onclick="toggle_payload(\'enablebrowser\'); return false" style="">Enable Browser</a>&nbsp;'+
+					'<a href="#" id="backup" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v2\'" onclick="toggle_payload(\'backup\'); return false" style="">Backup</a>&nbsp;'+
+					'<a href="#" id="restore" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v2\'" onclick="toggle_payload(\'restore\'); return false" style="">Restore</a>&nbsp;'+
+					'<a href="#" id="historyblocker" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v2\'" onclick="toggle_payload(\'historyblocker\'); return false" style="">History Blocker</a>&nbsp;'+
 					'</td>'+
 					'</tr>'+
 					'<tr><td><br/></td></tr>'+
 					'<tr>'+
 					'<td align="center" colspan="6">'+
-					'<a href="#" id="renamer" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'rifrenamer\'); return false" style="">Rif Renamer</a>&nbsp;'+
-					'<a href="#" id="todex" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'todex\'); return false" style="">To-Dex</a>&nbsp;'+
-					'<a href="#" id="disableaslr" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'disableaslr\'); return false" style="">Disable ASLR</a>&nbsp;'+
-					'<a href="#" id="kerneldumper" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'kerneldumper\'); return false" style="">Kernel Dumper</a>&nbsp;'+
-					'<a href="#" id="webrte" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'webrte\'); return false" style="">WebRTE</a>&nbsp;'+
+					'<a href="#" id="renamer" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v2\'" onclick="toggle_payload(\'rifrenamer\'); return false" style="">Rif Renamer</a>&nbsp;'+
+					'<a href="#" id="todex" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v2\'" onclick="toggle_payload(\'todex\'); return false" style="">To-Dex</a>&nbsp;'+
+					'<a href="#" id="disableaslr" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v2\'" onclick="toggle_payload(\'disableaslr\'); return false" style="">Disable ASLR</a>&nbsp;'+
+					'<a href="#" id="kerneldumper" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v2\'" onclick="toggle_payload(\'kerneldumper\'); return false" style="">Kernel Dumper</a>&nbsp;'+
+					'<a href="#" id="webrte" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v2\'" onclick="toggle_payload(\'webrte\'); return false" style="">WebRTE</a>&nbsp;'+
 					'</td>'+
 					'</tr>'+
 					'<tr><td><br/></td></tr>'+
 					'<tr>'+
 					'<td align="center" colspan="6">'+
-					'<a href="#" id="fancontrol" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'fancontrol\'); return false" style="">Fan Control</a>&nbsp;<select id="tempC"  style="font-size:20px;height:35px;width:60px;background-color:transparent;color:#ee596f;border:2px solid #404040;"></select><font size=5px>&#176;C</font>'+
+					'<a href="#" id="fancontrol" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v2\'" onclick="toggle_payload(\'fancontrol\'); return false" style="">Fan Control</a>&nbsp;<select id="tempC"  style="font-size:20px;height:35px;width:60px;background-color:transparent;color:#ee596f;border:2px solid #404040;"></select><font size=5px>&#176;C</font>'+
 					'</td>'+
 					'</tr>'+
 					'<tr><td><br/></td></tr>'+
@@ -341,7 +343,6 @@ input{
 			setTimeout(function()
 			{	
 				eval.call(window, scriptCode);
-				temperatura();
 				done();
 			}, 100);
 
