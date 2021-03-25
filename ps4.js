@@ -200,6 +200,9 @@ function toggle_payload(pld){
 	}else if(pld == "webrte"){
 		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, AGUARDE!!!";
 		preloadScripts(['preloader.js', 'webrte.js', 'loader.js']);
+	}else if(pld == "spoof"){
+		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, AGUARDE!!!";
+		preloadScripts(['preloader.js', 'spoof.js', 'loader.js']);
 	}
 	if(window.postPayload)
 		window.postPayload();
