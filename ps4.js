@@ -212,7 +212,7 @@ function payload_finished(payload)
 	if(payload == "binloader"){
 		setTimeout(function(){document.getElementById("progress").innerHTML="Aguardando a carga útil! Enviar pela porta 9021"; }, 7000);
 	} else if(payload != "exploit" && payload != "exploit_old"){
-		setTimeout(function(){document.getElementById("progress").innerHTML="Carga útil carregada com sucesso!"; }, 7000);
+		setTimeout(function(){document.getElementById("progress").innerHTML="Carga útil injetada com sucesso!"; }, 7000);
 	}
 }
 
