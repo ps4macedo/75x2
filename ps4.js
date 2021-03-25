@@ -114,7 +114,7 @@ function setupRW() {
 	g_jsview_butterfly = new Int64(bf);
 	if(!read64(g_jsview_butterfly.sub(16)).equals(new Int64("0xffff000000001337")))
 		die("[!] Failed to setup addrof/fakeobj primitives");
-	debug_log("Exploit do webkit concluída. <font color=\"#ee596f\">Executando</font> o exploit do kernel... <font color=\"#ee596f\">aguarde!!!</font>");
+		debug_log("Webkit explorado. <font style='color:#ee596f;'>Clique em uma versão do exploit </font>para concluir o DESBLOQUEIO!!!");
 
 	/* Getting code execution */
 	/* ... */
@@ -124,75 +124,81 @@ function setupRW() {
 }
 
 function toggle_payload(pld){
-	if(pld == "binloader"){
-		document.getElementById("progress").innerHTML="Aguardando o binloader... Enviar a carga para a porta 9020.";
+	if(pld == "exploit"){
+		document.getElementById("progress").innerHTML="Executando o Jailbreak... Por favor, AGUARDE!!!";
+		preloadScripts(['jb.js']);
+	}else if(pld == "exploit_old"){
+		document.getElementById("progress").innerHTML="Executando o Jailbreak... Por favor, AGUARDE!!!";
+		preloadScripts(['oldjb.js']);
+	}else if(pld == "binloader"){
+		document.getElementById("progress").innerHTML="Aguardando a CARGA ÚTIL... Envie pela porta 9020.";
 		preloadScripts(['preloader.js', 'loader.js']);
 	}else if(pld == "mira75X"){
-		document.getElementById("progress").innerHTML="Carregando MIRA.. Por favor, aguarde!";
+		document.getElementById("progress").innerHTML="Carregando MIRA.. Por favor, AGUARDE!!!";
 		if(fw=="755"){
 			preloadScripts(['preloader.js', 'mira'+fw+'.js', 'loader.js']);
 		}else{
 			preloadScripts(['preloader'+fw+'.js', 'mira'+fw+'.js', 'loader.js']);	
 		}
 	}else if(pld == "mira2b"){
-		document.getElementById("progress").innerHTML="Carregando MIRA + SPOOF... Por favor, aguarde!";
+		document.getElementById("progress").innerHTML="Carregando MIRA + SPOOF... Por favor, AGUARDE!!!";
 		preloadScripts(['preloader.js', 'mira2b.js', 'loader.js']);
 	}else if(pld == "ftp"){
 		setTimeout(function(){document.getElementById("progress").innerHTML="Carregando FTP... Acesse pela porta 1337."; }, 7000);
 		preloadScripts(['preloader.js', 'ftp.js', 'loader.js']);
 	}else if(pld == "app2usb"){
-		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, aguarde!";
+		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, AGUARDE!!!";
 		preloadScripts(['preloader.js', 'app2usb.js', 'loader.js']);
 	}else if(pld == "disableupdates"){
-		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, aguarde!";
+		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, AGUARDE!!!";
 		preloadScripts(['preloader.js', 'disableupdates.js', 'loader.js']);
 	}else if(pld == "enableupdates"){
-		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, aguarde!";
+		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, AGUARDE!!!";
 		preloadScripts(['preloader.js', 'enableupdates.js', 'loader.js']);
 	}else if(pld == "backup"){
-		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, aguarde!";
+		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, AGUARDE!!!";
 		preloadScripts(['preloader.js', 'backup.js', 'loader.js']);
 	}else if(pld == "restore"){
-		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, aguarde!";
+		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, AGUARDE!!!";
 		preloadScripts(['preloader.js', 'restore.js', 'loader.js']);
 	}else if(pld == "rifrenamer"){
-		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, aguarde!";
+		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, AGUARDE!!!";
 		preloadScripts(['preloader.js', 'rifrenamer.js', 'loader.js']);
 	}else if(pld == "todex"){
-		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, aguarde!";
+		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, AGUARDE!!!";
 		preloadScripts(['preloader.js', 'todex.js', 'loader.js']);
 	}else if(pld == "dumper"){
-		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, aguarde!";
+		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, AGUARDE!!!";
 		preloadScripts(['preloader.js', 'dumper.js', 'loader.js']);
 	}else if(pld == "disableaslr"){
-		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, aguarde!";
+		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, AGUARDE!!!";
 		preloadScripts(['preloader.js', 'disableaslr.js', 'loader.js']);
 	}else if(pld == "kerneldumper"){
-		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, aguarde!";
+		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, AGUARDE!!!";
 		preloadScripts(['preloader.js', 'kerneldumper.js', 'loader.js']);
 	}else if(pld == "kernelclock"){
-		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, aguarde!";
+		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, AGUARDE!!!";
 		preloadScripts(['preloader.js', 'kernelclock.js', 'loader.js']);
 	}else if(pld == "fancontrol"){
-		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, aguarde!";
+		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, AGUARDE!!!";
 		preloadScripts(['preloader.js', 'fancontrol.js', 'loader.js']);
 	}else if(pld == "enablebrowser"){
-		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, aguarde!";
+		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, AGUARDE!!!";
 		preloadScripts(['preloader.js', 'enablebrowser.js', 'loader.js']);
 	}else if(pld == "historyblocker"){
-		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, aguarde!";
+		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, AGUARDE!!!";
 		preloadScripts(['preloader.js', 'historyblocker.js', 'loader.js']);
 	}else if(pld == "exitidu"){
-		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, aguarde!";
+		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, AGUARDE!!!";
 		preloadScripts(['preloader.js', 'exitidu.js', 'loader.js']);
 	}else if(pld == "ps4debug"){
-		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, aguarde!";
+		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, AGUARDE!!!";
 		preloadScripts(['preloader.js', 'ps4debug.js', 'loader.js']);
 	}else if(pld == "goldhen"){
-		document.getElementById("progress").innerHTML="Carregando GoldHen... Por favor, aguarde!";
+		document.getElementById("progress").innerHTML="Carregando GoldHen... Por favor, AGUARDE!!!";
 		preloadScripts(['preloader.js', 'goldhen.js', 'loader.js']);
 	}else if(pld == "webrte"){
-		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, aguarde!";
+		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, AGUARDE!!!";
 		preloadScripts(['preloader.js', 'webrte.js', 'loader.js']);
 	}
 	if(window.postPayload)
@@ -204,10 +210,21 @@ function toggle_payload(pld){
 function payload_finished(payload)
 {
 	if(payload == "binloader"){
-		setTimeout(function(){document.getElementById("progress").innerHTML="Awaiting Payload!! Send Payload To Port 9021"; }, 7000);
+		setTimeout(function(){document.getElementById("progress").innerHTML="Aguardando a carga útil! Enviar pela porta 9021"; }, 7000);
 	} else if(payload != "exploit" && payload != "exploit_old"){
-		setTimeout(function(){document.getElementById("progress").innerHTML="<font style='color:#ee596f;'>JAILBREAK 7.5x</font> executado com sucesso!!!"; }, 7000);
+		setTimeout(function(){document.getElementById("progress").innerHTML="Carga útil carregada com sucesso!"; }, 7000);
 	}
+}
+
+function temperatura(){
+	for(var i=35; i<=80; i++){
+		var select = document.getElementById("tempC");
+		var option = document.createElement("OPTION");
+		select.options.add(option);
+		option.text = i;
+		option.value = i;
+	}
+	tempC.value=70;
 }
 
 function read(addr, length) {

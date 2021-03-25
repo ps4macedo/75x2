@@ -219,7 +219,7 @@ input{
 </head>
 	<body onload="go()" class="bg">
 		<script>
-			if(localStorage.jb==null){localStorage.jb='jb.js'}
+			if(localStorage.jb==null){localStorage.jb='jb.js';}
 			var fw = (navigator.userAgent.substring(navigator.userAgent.indexOf('5.0 (') + 19, navigator.userAgent.indexOf(') Apple'))).replace('.', '');;
 			if(window.applicationCache.status==2){localStorage.is75XV2Cached=true;}
 			window.applicationCache.ondownloading=function(){document.getElementById("progress").innerHTML="Instalando Cache Offline... <font color=\"#ee596f\"> Aguarde!!!</font>";localStorage.is75XV2Cached=false;};
@@ -260,31 +260,34 @@ input{
 		
 		function done(){
 			document.getElementById("myProgress").remove();
-			if(document.getElementById("progress").innerHTML.includes("falhou")){
-				document.getElementById('load').innerHTML='<tr>'+
-				    '<td><h1 style=\'font-size:27px;text-align:center;\'><u><font color="#49c179">PS4MACEDO 7.5x v1</font></u></h1></td></tr>'+
-					'<tr>'+
-					'<td align="center"><font size="3">'+
-					'<font color="white">Selecione a </font><font color="#ee596f"><b>Nova Versão do Preload</b></font> <font color="#ee596f" size="5"><b>aqui</b></font><input type="checkbox" id="tog" onclick="if(document.getElementById(\'tog\').checked){localStorage.jb=\'jb.js\'; progress.innerHTML=\'Nova versão do preload selecionada.\'}else{localStorage.jb=\'oldjb.js\'; progress.innerHTML=\'Versão anterior do preload selecionada.\'}"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'"; /></font></td>'+
+			if(document.getElementById("progress").innerHTML.includes("Failed")){
+				document.getElementById('load').innerHTML=''+
+					'<tr id="toggleExploit" style="color:white;">'+
+					'<td id="oexp" align="right" style="color:#585858; width: 45%;font-family: system-ui;font-size: 20px;">Preload Old Exploit &nbsp;</td>'+
+					'<td style="width: 10%;"><label class="switch"><input checked id="tog" onclick="if(document.getElementById(\'tog\').checked){document.getElementById(\'oexp\').style.color=\'#585858\';document.getElementById(\'nexp\').style.color=\'white\';localStorage.jb=\'jb.js\';}else{document.getElementById(\'nexp\').style.color=\'#585858\';document.getElementById(\'oexp\').style.color=\'white\';localStorage.jb=\'oldjb.js\';}" type="checkbox"><span class="slider round"></span></label></td>'+
+					'<td id="nexp" align="left" style="width: 45%;font-family: system-ui;font-size: 20px;">&nbsp; Preload New Exploit</td>'+
 					'</tr>';
 			}else{
 				document.getElementById('load').innerHTML='<tr>'+
-				    '<td><h1 style=\'font-size:27px;text-align:center;\'><u><font color="#49c179">PS4MACEDO 7.5x v1</font></u></h1></td></tr>'+
-					'<tr>'+
-					'<td align="center"><font size="3">'+
-					'<font color="white">Selecione a </font><font color="#ee596f"><b>Nova Versão do Preload</b></font> <font color="#ee596f" size="5"><b>aqui</b></font><input type="checkbox" id="tog" onclick="if(document.getElementById(\'tog\').checked){localStorage.jb=\'jb.js\'; progress.innerHTML=\'Nova versão do preload selecionada.\'}else{localStorage.jb=\'oldjb.js\'; progress.innerHTML=\'Versão anterior do preload selecionada.\'}"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'"; /></font></td>'+
-					'</tr>'+
+				    '<td><h1 style=\'font-size:27px;text-align:center;\'><u><font color="#49c179">EXPLOIT 7.5x</font></u></h1></td></tr>'+
 					'<tr>'+
 					'<td align="center" colspan="6">'+
-					'<a href="#" id="goldhen" class="button" onMouseOver="progress.innerHTML=\'Ativa GoldHEN v1.0 + FTP\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'goldhen\'); return false" style="">GoldHEN</a>&nbsp;'+
-					'<a href="#" id="mira75X" class="button" onMouseOver="progress.innerHTML=\'Ativa Mira (AlAzif)\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'mira75X\'); return false" style="">MIRA</a>&nbsp;'+
-					'<a href="#" id="mira2b" class="button" onMouseOver="progress.innerHTML=\'Ativa Mira (Karo) + Spoof FW 9.99\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'mira2b\'); return false" style="">MIRA+</a>&nbsp;'+
+					'<a href="#" id="exploit_old" class="button" onMouseOver="progress.innerHTML=\'Exploit (sleirsgoevy) necessário para ativação das cargas úteis.\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'exploit_old\'); return false" style=""><font color="#ee596f">VERSÃO 1</font></a>&nbsp;'+
+					'<a href="#" id="exploit" class="button" onMouseOver="progress.innerHTML=\'Exploit (sleirsgoevy) necessário para ativação das cargas úteis.\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'exploit\'); return false" style=""><font color="#ee596f">VERSÃO 2</font></a>&nbsp;'+
 					'</td>'+
 					'</tr>'+
-					'<tr><td><br/></td></tr>'+
+					'<tr><td><hr size="1" color="#6089f6"></td></tr>'+
 					'<tr>'+
 				    '<td><h1 style=\'font-size:27px;text-align:center;\'><u><font color="#49c179">CARGAS ÚTEIS</font></u></h1></td>'+
 					'</tr>'+
+					'<tr>'+
+					'<td align="center" colspan="6">'+
+					'<a href="#" id="goldhen" class="button" onMouseOver="progress.innerHTML=\'Ativa GoldHEN v1.0 + FTP\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'goldhen\'); return false" style=""><font color="#6089f6">GoldHEN</font></a>&nbsp;'+
+					'<a href="#" id="mira75X" class="button" onMouseOver="progress.innerHTML=\'Ativa Mira (AlAzif)\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'mira75X\'); return false" style=""><font color="#ee596f">MIRA</font></a>&nbsp;'+
+					'<a href="#" id="mira2b" class="button" onMouseOver="progress.innerHTML=\'Ativa Mira (Karo) + Spoof FW 9.99\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'mira2b\'); return false" style=""><font color="#ee596f">MIRA+</font></a>&nbsp;'+
+					'</td>'+
+					'</tr>'+
+					'<tr><td><br/></td></tr>'+
 					'<tr>'+
 					'<td align="center"  colspan="6">'+
 					'<a href="#" id="app2usb" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'app2usb\'); return false" style="">App2USB</a>&nbsp;'+
@@ -314,16 +317,23 @@ input{
 					'<a href="#" id="disableaslr" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'disableaslr\'); return false" style="">Disable ASLR</a>&nbsp;'+
 					'<a href="#" id="kerneldumper" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'kerneldumper\'); return false" style="">Kernel Dumper</a>&nbsp;'+
 					'<a href="#" id="webrte" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'webrte\'); return false" style="">WebRTE</a>&nbsp;'+
-					'<a href="#" id="fancontrol" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'fancontrol\'); return false" style="">Fan Control</a>&nbsp;'+
 					'</td>'+
-					'</tr>';
+					'</tr>'+
+					'<tr><td><br/></td></tr>'+
+					'<tr>'+
+					'<td align="center" colspan="6">'+
+					'<a href="#" id="fancontrol" class="button" onMouseOver="progress.innerHTML=\'xxx\'"; onmouseout="progress.innerHTML=\'PS4MACEDO Jailbreak 7.5x v1\'" onclick="toggle_payload(\'fancontrol\'); return false" style="">Fan Control</a>&nbsp;<select id="tempC"  style="font-size:20px;height:35px;width:60px;background-color:transparent;color:#ee596f;border:2px solid #404040;"></select><font size=5px>&#176;C</font>'+
+					'</td>'+
+					'</tr>'+
+					'<tr><td><br/></td></tr>'+
+					'<tr><td><hr size="1" color="#6089f6"></td></tr>';
 			}
-			if(localStorage.jb=='jb.js'){document.getElementById('tog').checked=true;document.getElementById('oexp').style.color='gray';document.getElementById('nexp').style.color='white';}else{document.getElementById('tog').checked=false;document.getElementById('oexp').style.color='white';document.getElementById('nexp').style.color='gray';}
+			if(localStorage.jb=='jb.js'){document.getElementById('tog').checked=true;document.getElementById('oexp').style.color='#585858';document.getElementById('nexp').style.color='white';}else{document.getElementById('tog').checked=false;document.getElementById('oexp').style.color='white';document.getElementById('nexp').style.color='#585858';}
 		}
 		
 		window.midExploit = function()
 		{
-			preloadScripts(['exploit.js', localStorage.jb]);
+			preloadScripts(['exploit.js']);
 		}
 
 		window.postExploit = function()
@@ -331,6 +341,7 @@ input{
 			setTimeout(function()
 			{	
 				eval.call(window, scriptCode);
+				temperatura();
 				done();
 			}, 100);
 
@@ -351,7 +362,7 @@ input{
 		<script src="int64.js"></script>
 		<script src="ps4.js"></script>
 		<h1 id="progress" class="titlehead">Carregando... Por favor, <font color="#ee596f">espere!!!</font></h1>
-		<hr width="50%" size="1" color="#ff5757">
+		<hr width="75%" size="1" color="#ff5757">
 		<button style="opacity:0" id="input1" onfocus="handle2()"></button>
 		<button style="opacity:0" id="input2"></button>
 		<button style="opacity:0" id="input3" onfocus="handle2()"></button>
