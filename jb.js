@@ -9,7 +9,7 @@ var _ = malloc_nogc.pop();
 var _ = malloc_nogc.pop();
 var _ = malloc_nogc.pop();
 if(main_ret == 179 || main_ret == 0){
-	document.getElementById("progress").innerHTML="Jailbreak efetivado com sucesso!!! Agora clique em um mira.";
+	document.getElementById("progress").innerHTML="Jailbreak efetivado com sucesso!!! Agora clique em um hen.";
 } else{
 	alert("Falha na exploração do kernel! Reinicie o PS4 e refaça o processo.");
 	document.getElementById("progress").innerHTML="Falha na exploração do kernel! Reinicie o PS4 e refaça o processo.";
