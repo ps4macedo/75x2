@@ -203,9 +203,27 @@ function toggle_payload(pld){
 	}else if(pld == "spoof"){
 		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, AGUARDE!!!";
 		preloadScripts(['preloader.js', 'spoof.js', 'loader.js']);
+	}else if(pld == "arabicGuy100"){
+		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, AGUARDE!!!";
+		preloadScripts(['preloader.js', 'arabicGuy100.js', 'loader.js']);
+	}else if(pld == "arabicGuy127"){
+		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, AGUARDE!!!";
+		preloadScripts(['preloader.js', 'arabicGuy127.js', 'loader.js']);
+	}else if(pld == "arabicGuy132"){
+		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, AGUARDE!!!";
+		preloadScripts(['preloader.js', 'arabicGuy132.js', 'loader.js']);
+	}else if(pld == "native100"){
+		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, AGUARDE!!!";
+		preloadScripts(['preloader.js', 'native100.js', 'loader.js']);
+	}else if(pld == "native127"){
+		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, AGUARDE!!!";
+		preloadScripts(['preloader.js', 'native127.js', 'loader.js']);
 	}else if(pld == "lamance132"){
 		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, AGUARDE!!!";
 		preloadScripts(['preloader.js', 'lamance132.js', 'loader.js']);
+	}else if(pld == "native132"){
+		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, AGUARDE!!!";
+		preloadScripts(['preloader.js', 'native132.js', 'loader.js']);
 	}
 	if(window.postPayload)
 		window.postPayload();
