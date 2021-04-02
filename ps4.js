@@ -135,11 +135,7 @@ function toggle_payload(pld){
 		preloadScripts(['preloader.js', 'loader.js']);
 	}else if(pld == "mira75X"){
 		document.getElementById("progress").innerHTML="Carregando MIRA.. Por favor, AGUARDE!!!";
-		if(fw=="755"){
-			preloadScripts(['preloader.js', 'mira'+fw+'.js', 'loader.js']);
-		}else{
-			preloadScripts(['preloader'+fw+'.js', 'mira'+fw+'.js', 'loader.js']);	
-		}
+		preloadScripts(['preloader.js', 'mira.js', 'loader.js']);
 	}else if(pld == "mira2b"){
 		document.getElementById("progress").innerHTML="Carregando MIRA + SPOOF... Por favor, AGUARDE!!!";
 		preloadScripts(['preloader.js', 'mira2b.js', 'loader.js']);
@@ -195,8 +191,11 @@ function toggle_payload(pld){
 		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, AGUARDE!!!";
 		preloadScripts(['preloader.js', 'ps4debug.js', 'loader.js']);
 	}else if(pld == "goldhen"){
-		document.getElementById("progress").innerHTML="Carregando GoldHen... Por favor, AGUARDE!!!";
+		document.getElementById("progress").innerHTML="Carregando GoldHen v1.0... Por favor, AGUARDE!!!";
 		preloadScripts(['preloader.js', 'goldhen.js', 'loader.js']);
+	}else if(pld == "goldhen2"){
+		document.getElementById("progress").innerHTML="Carregando GoldHen v1.13b... Por favor, AGUARDE!!!";
+		preloadScripts(['preloader.js', 'goldhen2.js', 'loader.js']);
 	}else if(pld == "webrte"){
 		document.getElementById("progress").innerHTML="Carregando Carga Útil... Por favor, AGUARDE!!!";
 		preloadScripts(['preloader.js', 'webrte.js', 'loader.js']);
@@ -543,7 +542,7 @@ function sprayHTMLTextArea() {
 	 * This spray is not perfect, "element.cloneNode" will trigger a fastMalloc
 	 * allocation of the node attributes and an IsoHeap allocation of the
 	 * Element. The virtual page layout will look something like that:
-	 * [IsoHeap] [fastMalloc] [IsoHeap] [fastMalloc] [IsoHeap] [...] DARKMODDER
+	 * [IsoHeap] [fastMalloc] [IsoHeap] [fastMalloc] [IsoHeap] [...] 
 	 */
 	for (let i = 0; i < SPRAY_ELEM_SIZE; i++)
 		textarea_div_elem.appendChild(element.cloneNode());

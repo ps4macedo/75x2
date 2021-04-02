@@ -16,6 +16,7 @@ exploit.js
 fancontrol.js
 ftp.js
 goldhen.js
+goldhen2.js
 historyblocker.js
 index.html
 int64.js
@@ -24,17 +25,13 @@ kernelclock.js
 kerneldumper.js
 lamance132.js
 loader.js
+mira.js
 mira2b.js
-mira750.js
-mira751.js
-mira755.js
 native100.js
 native127.js
 native132.js
 oldjb.js
 preloader.js
-preloader750.js
-preloader751.js
 ps4.js
 ps4debug.js
 restore.js
